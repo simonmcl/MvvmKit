@@ -47,7 +47,7 @@ class ProfileViewModel: ViewModelWithTableView {
 	}
 	
 	func load() async -> Bool {
-		try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay to simulate network
+		try? await Task.sleep(for: .seconds(1)) // 1 second delay to simulate network
 		
 		tableViewData = [
 			.init(withHeader: nil, footer: nil, andCellModels: [
@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController {
 	
 	vc.viewDidLoad()
 	
-	try? await Task.sleep(nanoseconds: 3_000_000_000) // 3 second delay to simulate network
+	try? await Task.sleep(for: .seconds(3)) // 3 second delay to simulate network
 	
 	// Confirm the viewModel data has been updated
 	#expect(vc.viewModel.tableViewData.count == 1)

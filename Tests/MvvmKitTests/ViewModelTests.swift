@@ -31,7 +31,7 @@ class ViewModelTest: ViewModel {
 	func load() async -> Bool {
 		isLoading = true
 		
-		try? await Task.sleep(nanoseconds: 3_000_000_000) // 3 second delay to simulate network
+		try? await Task.sleep(for: .seconds(3)) // 3 second delay to simulate network
 		count += 1
 		isLoading = false
 		
@@ -84,7 +84,7 @@ class ViewModelInputTest: ViewModelWithInput {
 	func load(withInput input: Profile) async -> Bool {
 		isLoading = true
 		
-		try? await Task.sleep(nanoseconds: 3_000_000_000) // 3 second delay to simulate network
+		try? await Task.sleep(for: .seconds(3)) // 3 second delay to simulate network
 		
 		if input.username == "john_doe" {
 			count += 1
