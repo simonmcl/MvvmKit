@@ -18,17 +18,17 @@ public struct UITableViewSectionModel {
 	/**
 	 Optional string to be used as the section header.
 	 */
-	let header: String?
+	public let header: String?
 	
 	/**
 	 Optional string to be used as the section footer.
 	 */
-	let footer: String?
+	public let footer: String?
 	
 	/**
 	 Required array of `UITableViewCellModel` to be used to configure each cell in the section.
 	 */
-	let cellModels: [UITableViewCellModel]
+	public let cellModels: [UITableViewCellModel]
 	
 	/**
 	 init()
@@ -37,7 +37,7 @@ public struct UITableViewSectionModel {
 	 - Parameter footer: Optional footer text for this section.
 	 - Parameter cellModels: An array of objects conforming to `UITableViewCellModel`. This is required to configure each cell in the section.
 	 */
-	init(withHeader header: String?, footer: String?, andCellModels models: [UITableViewCellModel]) {
+	public init(withHeader header: String?, footer: String?, andCellModels models: [UITableViewCellModel]) {
 		self.header = header
 		self.footer = footer
 		self.cellModels = models
