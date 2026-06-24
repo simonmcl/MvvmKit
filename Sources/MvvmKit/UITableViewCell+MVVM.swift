@@ -12,7 +12,7 @@ import UIKit
  The struct created by the VIewModel will denote which `UITableViewCell` class will be loaded to handle its data.
  The class will enable the autocompletion of the cellForRowAtIndexPath delegate
  */
-protocol UITableViewCellModel {
+public protocol UITableViewCellModel {
 	
 	/// The MVVM compliant class to use for this model. E.g. `ProfileCell.Type`
 	var cell: UITableViewCellMVVM.Type { get }
@@ -23,7 +23,7 @@ protocol UITableViewCellModel {
  A protocol to define the requirements for a `UITableViewCell` to be able to be autoamtically dequeued and registered for a given `UITableView`
  */
 @MainActor
-protocol UITableViewCellMVVM: UITableViewCell {
+public protocol UITableViewCellMVVM: UITableViewCell {
 	
 	static var staticIdentifier: String { get }
 	

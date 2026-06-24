@@ -13,7 +13,7 @@
  - `UITableViewCellModel` gives us all the data we need to configure the cell and set its data.
  - `header` / `footer` properties allow us to set section headers / footers if needed.
  */
-struct UITableViewSectionModel {
+public struct UITableViewSectionModel {
 	
 	/**
 	 Optional string to be used as the section header.

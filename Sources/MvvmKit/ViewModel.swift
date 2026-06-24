@@ -20,7 +20,7 @@ import Observation
  prefrom its specific business logic. E.g. Requesting data from a known URL that requires no parameters.
  */
 @MainActor
-protocol ViewModel: Observable {
+public protocol ViewModel: Observable {
 	var isLoading: Bool { get set }
 	var error: Error? { get set }
 	
@@ -35,7 +35,7 @@ protocol ViewModel: Observable {
  its business logic. E.g. Requiring a username and password to complete a login request.
  */
 @MainActor
-protocol ViewModelWithInput: Observable {
+public protocol ViewModelWithInput: Observable {
 	associatedtype ViewModelInput
 	
 	var isLoading: Bool { get set }
@@ -57,7 +57,7 @@ protocol ViewModelWithInput: Observable {
  will be populated by the end of the function `load()`. This variable can be passed directly to a `UITableView`'s new `tableViewData` property.
  */
 @MainActor
-protocol ViewModelWithTableView: Observable {
+public protocol ViewModelWithTableView: Observable {
 	var isLoading: Bool { get set }
 	var error: Error? { get set }
 	var tableViewData: [UITableViewSectionModel] { get set}
@@ -74,7 +74,7 @@ protocol ViewModelWithTableView: Observable {
  will be populated by the end of the function `load()`. This variable can be passed directly to a `UITableView`'s new `tableViewData` property.
  */
 @MainActor
-protocol ViewModelWithTableViewAndInput: Observable {
+public protocol ViewModelWithTableViewAndInput: Observable {
 	associatedtype ViewModelInput
 	
 	var isLoading: Bool { get set }

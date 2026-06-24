@@ -13,7 +13,7 @@ import UIKit
  
  Using the setter, we can capture if the tableview received the data it needed. If so the tableView can now handle its own datasource methods, and the delegate can handle user interactions
  */
-extension UITableView {
+public extension UITableView {
 	private static var _tableViewDataProperty = [String: [UITableViewSectionModel]?]()
 	
 	var tableViewData: [UITableViewSectionModel]? {
