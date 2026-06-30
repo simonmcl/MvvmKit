@@ -82,18 +82,18 @@ extension UITableView: @retroactive UITableViewDataSource {
 	/**
 	 MVVM implementation of `titleForHeaderInSection` as it will always be the same when using a viewModel.
 	 */
-	public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-		guard let header = tableViewData?[section].header else { return nil }
+	public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		guard let footer = tableViewData?[section].header else { return nil }
 		
-		return header
+		return footer
 	}
 	
 	/**
 	 MVVM implementation of `titleForFooterInSection` as it will always be the same when using a viewModel.
 	 */
-	public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		guard let footer = tableViewData?[section].footer else { return nil }
+	public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		guard let header = tableViewData?[section].footer else { return nil }
 		
-		return footer
+		return header
 	}
 }
