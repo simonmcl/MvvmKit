@@ -65,7 +65,7 @@ public protocol ViewModelWithTableView: Observable {
 	mutating func load() async -> Bool
 	
 	func registerExternalCells(for tableView: UITableView)
-	func expandSection(at indexPath: IndexPath) -> UITableViewMutation
+	func expandOrCollapseSection(at indexPath: IndexPath) -> UITableViewMutation?
 }
 
 /**
@@ -86,5 +86,5 @@ public protocol ViewModelWithTableViewAndInput: Observable {
 	mutating func load(withInput input: ViewModelInput) async -> Bool
 	
 	func registerExternalCells(for tableView: UITableView)
-	func expandSection(at indexPath: IndexPath) -> UITableViewMutation
+	func expandOrCollapseSection(at indexPath: IndexPath) -> UITableViewMutation?
 }
