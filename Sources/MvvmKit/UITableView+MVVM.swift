@@ -35,6 +35,21 @@ public extension UITableView {
 			UITableView._tableViewDataProperty[tmpAddress] = newValue
 		}
 	}
+	
+	/// Allows a generic approach to expanding/collapsing tableview sections, separate from the bulk reload mechanism of the `tableViewData` property
+	func apply(mutation: UITableViewMutation, tableViewData: [UITableViewSectionModel]) {
+		performBatchUpdates {
+			self.tableViewData = tableViewData
+			
+			deleteSections(mutation.deletedSections, with: mutation.animation)
+			insertSections(mutation.insertedSections, with: mutation.animation)
+			reloadSections(mutation.reloadedSections, with: mutation.animation)
+			
+			deleteRows(at: mutation.deletedRows, with: mutation.animation)
+			insertRows(at: mutation.insertedRows, with: mutation.animation)
+			reloadRows(at: mutation.reloadedRows, with: mutation.animation)
+		}
+	}
 }
 
 /**
